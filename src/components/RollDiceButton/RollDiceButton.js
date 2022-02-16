@@ -1,16 +1,12 @@
 import styles from './RollDiceButton.module.css'
+import { useSelector, useDispatch } from 'react-redux';
+import { rollDice } from '../../store/diceSlice'
 
 const RollDiceButton = (props) => {
+    const dispatch = useDispatch();
 
     const handleRollButtonClick = () => {
-        let newDiceArray = props.playDice
-        newDiceArray.forEach(die => {
-            if (die.selected === false) {
-                die.value = Math.floor(Math.random() * 6 + 1)
-                die.img = `die${die.value}.svg`
-            }
-        })
-        props.setPlayDice(newDiceArray)
+        dispatch(rollDice())
     }
 
     return (
