@@ -1,15 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import countReducer from '../store/countSlice';
 import diceReducer from '../store/diceSlice';
-
-// export const store = configureStore({
-//   reducer: {
-//     counter: counterReducer,
-//   },
-// });
+import scoreReducer from '../store/scoreSlice'
 
 export const store = configureStore({
   reducer: {
     dice: diceReducer,
+    count: countReducer,
+    score: scoreReducer,
   },
 });
