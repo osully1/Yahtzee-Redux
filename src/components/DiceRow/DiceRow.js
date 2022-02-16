@@ -1,6 +1,6 @@
 import styles from './DiceRow.module.css';
-import { useSelector, useDispatch } from 'react-redux';
-import { rollDice, selectPlayDice } from '../../store/diceSlice'
+import { useSelector } from 'react-redux';
+import { selectPlayDice } from '../../store/diceSlice'
 import Die from '../Die/Die';
 
 const DiceRow = (props) => {

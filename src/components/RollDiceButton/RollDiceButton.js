@@ -1,5 +1,5 @@
 import styles from './RollDiceButton.module.css'
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { rollDice } from '../../store/diceSlice'
 
 const RollDiceButton = (props) => {

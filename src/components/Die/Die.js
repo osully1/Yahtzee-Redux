@@ -1,8 +1,7 @@
 import styles from './Die.module.css'
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { holdDie } from '../../store/diceSlice'
 import { css, StyleSheet } from "aphrodite"
-import { useState, useRef, useEffect } from 'react'
 
 const Die = (props) => {
     const dispatch = useDispatch();
