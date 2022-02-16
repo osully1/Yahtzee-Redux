@@ -1,0 +1,7 @@
+.Scoreboard {
+    position: absolute;
+    right: 25px;
+    background-color: #31AA6D;
+    border-radius: 18px;
+    padding: 12em 32px;
+}
