@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { rollDice, setInitialDice, selectPlayDice } from '../../store/diceSlice'
+import { setInitialDice, selectPlayDice } from '../../store/diceSlice'
 import PlayArea from '../PlayArea/PlayArea';
 import ScoreBoard from '../ScoreBoard/ScoreBoard';
 import styles from './GameTable.module.css';
