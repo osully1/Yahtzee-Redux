@@ -5,7 +5,7 @@ import RollDiceButton from '../RollDiceButton/RollDiceButton'
 const PlayArea = (props) => {
     return (
         <>
-            <div className={styles.PlayArea}>
+            <div className={styles.DiceRow}>
                 <DiceRow />
             </div>
             <div className={styles.RollDiceButton}>
