@@ -14,6 +14,6 @@ const ScoreBoard = (props) => {
             <ScoreCategory />
         )
     })
-};
+}
 
 export default ScoreBoard
