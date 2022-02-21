@@ -10,10 +10,13 @@ const ScoreBoard = (props) => {
     const dispatch = useDispatch();
 
     return Object.keys(score).map((category, idx) => {
+        const scoreValue = score[`${category}`]
+        console.log(score['Ones'])
         return(
             <ScoreCategory
                 category={category}
                 idx={idx}
+                scoreValue={scoreValue}
             />
         )
     })

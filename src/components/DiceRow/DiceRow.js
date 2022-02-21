@@ -7,8 +7,6 @@ const DiceRow = (props) => {
 
     const dice = useSelector(selectPlayDice);
 
-    const dicex = [1, 2, 3, 4, 5]
-
     return dice.map((die, idx) => {
         return(
             <Die 
