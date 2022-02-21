@@ -1,3 +1,13 @@
 .GameTable {
+    display: flex;
+}
 
+.playArea {
+    margin: auto 5em auto auto
+}
+
+.scoreBoard {
+    /* position: absolute;
+    right: 3em;
+    top: 25%; */
 }

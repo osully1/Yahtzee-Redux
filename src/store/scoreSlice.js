@@ -23,13 +23,63 @@ export const scoreSlice = createSlice({
     name: 'score',
     initialState,
     reducers: {
-        setScore: (state, action) => {
+        setOnes: (state, action) => {
+            state['Ones'] = action.payload.filter(x => x.value === 1).length
+        },
+        setTwos: (state, action) => {
             
         },
+        setThrees: (state, action) => {
+            
+        },
+        setFours: (state, action) => {
+            
+        },
+        setFives: (state, action) => {
+            
+        },
+        setSixes: (state, action) => {
+            
+        },
+        setThreeOfAKind: (state, action) => {
+            
+        },
+        setFourOfAKind: (state, action) => {
+            
+        },
+        setFullHouse: (state, action) => {
+            
+        },
+        setSmallStraight: (state, action) => {
+            
+        },
+        setLargeStraight: (state, action) => {
+            
+        },
+        setChance: (state, action) => {
+            
+        },
+        setYahtzee: (state, action) => {
+            
+        }
     }
 });
 
-export const { incrementRollCount, resetRollCount, setScore } = scoreSlice.actions;
+export const { 
+    setOnes,
+    setTwos,
+    setThrees,
+    setFours,
+    setFives,
+    setSixes,
+    setThreeOfAKind,
+    setFourOfAKind,
+    setFullHouse,
+    setSmallStraight,
+    setLargeStraight,
+    setChance,
+    setYahtzee,
+} = scoreSlice.actions;
 
 export const selectScore = (state) => state.score;
 

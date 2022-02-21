@@ -21,9 +21,13 @@ const GameTable = (props) => {
     }, [])
 
     return (
-        <div className={GameTable}>
-            <PlayArea />
-            <ScoreBoard />
+        <div className={styles.GameTable}>
+            <div className={styles.playArea}>
+                <PlayArea />
+            </div>
+            <div className={styles.scoreBoard}>
+                <ScoreBoard />
+            </div>
         </div>
     )
 }
