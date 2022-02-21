@@ -24,33 +24,38 @@ const ScoreCategory = (props) => {
     const dice = useSelector(selectPlayDice);
     const dispatch = useDispatch();
 
+    const diceArray = dice.map((die) => {
+        return die.value
+    })
+
     const handleScoreSubmit = (dice, category) => {
+        console.log(diceArray)
         if (category === 'Ones') {
-            dispatch(setOnes(dice))
+            dispatch(setOnes(diceArray))
         } else if (category === 'Twos') {
-            dispatch(setTwos(dice))
+            dispatch(setTwos(diceArray))
         } else if (category === 'Threes') {
-            dispatch(setThrees(dice))
+            dispatch(setThrees(diceArray))
         } else if (category === 'Fours') {
-            dispatch(setFours(dice))
+            dispatch(setFours(diceArray))
         } else if (category === 'Fives') {
-            dispatch(setFives(dice))
+            dispatch(setFives(diceArray))
         } else if (category === 'Sixes') {
-            dispatch(setSixes(dice))
+            dispatch(setSixes(diceArray))
         } else if (category === 'Three of a Kind') {
-            dispatch(setThreeOfAKind(dice))
+            dispatch(setThreeOfAKind(diceArray))
         } else if (category === 'Four of a Kind') {
-            dispatch(setFourOfAKind(dice))
+            dispatch(setFourOfAKind(diceArray))
         } else if (category === 'Full House') {
-            dispatch(setFullHouse(dice))
+            dispatch(setFullHouse(diceArray))
         } else if (category === 'Small Straight') {
-            dispatch(setSmallStraight(dice))
+            dispatch(setSmallStraight(diceArray))
         } else if (category === 'Large Straight') {
-            dispatch(setLargeStraight(dice))
+            dispatch(setLargeStraight(diceArray))
         } else if (category === 'Chance') {
-            dispatch(setChance(dice))
+            dispatch(setChance(diceArray))
         } else if (category === 'Yahtzee') {
-            dispatch(setYahtzee(dice))
+            dispatch(setYahtzee(diceArray))
         }
     }
 

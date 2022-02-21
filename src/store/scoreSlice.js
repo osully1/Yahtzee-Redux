@@ -24,22 +24,22 @@ export const scoreSlice = createSlice({
     initialState,
     reducers: {
         setOnes: (state, action) => {
-            state['Ones'] = action.payload.filter(x => x.value === 1).length
+            state['Ones'] = action.payload.filter(x => x === 1).length
         },
         setTwos: (state, action) => {
-            
+            state['Twos'] = action.payload.filter(x => x === 2).length * 2
         },
         setThrees: (state, action) => {
-            
+            state['Threes'] = action.payload.filter(x => x === 3).length * 3
         },
         setFours: (state, action) => {
-            
+            state['Fours'] = action.payload.filter(x => x === 4).length * 4
         },
         setFives: (state, action) => {
-            
+            state['Fives'] = action.payload.filter(x => x === 5).length * 5
         },
         setSixes: (state, action) => {
-            
+            state['Sixes'] = action.payload.filter(x => x === 6).length * 6
         },
         setThreeOfAKind: (state, action) => {
             
@@ -51,10 +51,41 @@ export const scoreSlice = createSlice({
             
         },
         setSmallStraight: (state, action) => {
-            
+            if (
+                action.payload.includes(1)
+                && action.payload.includes(2)
+                && action.payload.includes(3)
+                && action.payload.includes(4)
+                ||
+                action.payload.includes(2)
+                && action.payload.includes(3)
+                && action.payload.includes(4)
+                && action.payload.includes(5)
+                ||
+                action.payload.includes(3)
+                && action.payload.includes(4)
+                && action.payload.includes(5)
+                && action.payload.includes(6)
+            ) {
+                state['Small Straight'] = 30
+            } else {state['Small Straight'] = 0} 
         },
         setLargeStraight: (state, action) => {
-            
+            if (
+                action.payload.includes(1)
+                && action.payload.includes(2)
+                && action.payload.includes(3)
+                && action.payload.includes(4)
+                && action.payload.includes(5)
+                ||
+                action.payload.includes(2)
+                && action.payload.includes(3)
+                && action.payload.includes(4)
+                && action.payload.includes(5)
+                && action.payload.includes(6)
+            ) {
+                state['Large Straight'] = 40
+            } else {state['Large Straight'] = 0}
         },
         setChance: (state, action) => {
             
