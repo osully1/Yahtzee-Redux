@@ -68,7 +68,9 @@ export const scoreSlice = createSlice({
                 && action.payload.includes(6)
             ) {
                 state['Small Straight'] = 30
-            } else {state['Small Straight'] = 0} 
+            } else {
+                state['Small Straight'] = 0
+            } 
         },
         setLargeStraight: (state, action) => {
             if (
@@ -85,13 +87,19 @@ export const scoreSlice = createSlice({
                 && action.payload.includes(6)
             ) {
                 state['Large Straight'] = 40
-            } else {state['Large Straight'] = 0}
+            } else {
+                state['Large Straight'] = 0
+            }
         },
         setChance: (state, action) => {
             state['Chance'] = action.payload.reduce((a, b) => a + b, 0)
         },
         setYahtzee: (state, action) => {
-            
+            if (action.payload.every(x => x === action.payload[0])) {
+                state['Yahtzee'] = 50
+            } else {
+                state['Yahtzee'] = 0
+            }
         }
     }
 });
