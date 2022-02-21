@@ -3,8 +3,10 @@ import styles from './ScoreCategory.module.css'
 const ScoreCategory = (props) => {
     return(
         <div className={styles.ScoreCategory} key={props.idx}>
-            <p>{`${props.category}`}</p>
-            <button>{props.scoreValue}</button>
+            <div className={styles.rowNameContainer}>
+                <p className={styles.rowName}>{`${props.category}`}</p>
+            </div>
+            <button className={styles.button}>{props.scoreValue}</button>
         </div>
     )
 }

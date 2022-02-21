@@ -20,25 +20,11 @@ const GameTable = (props) => {
         ]))
     }, [])
 
-    // const [yourDice, setYourDice] = useState([])
-    // const [playDice, setPlayDice] = useState([
-    //     {value: null, selected: false, img: ''}, {value: null, selected: false, img: ''}, {value: null, selected: false, img: ''}, {value: null, selected: false, img: ''}, {value: null, selected: false, img: ''}
-    // ])
-    // const [selectedDice, setSelectedDice] = useState([
-    //     {value: 1, selected: false, img: ''}, {value: 2, selected: false, img: ''}, {value: 3, selected: false, img: ''}, {value: 4, selected: false, img: ''}, {value: 5, selected: false, img: ''}
-    // ])
-
-    // useEffect(() => {
-    //     setPlayDice([
-    //         {value: 1, selected: false, img: "die1.svg"}, {value: 2, selected: false, img: "die2.svg"}, {value: 3, selected: false, img: "die3.svg"}, {value: 4, selected: false, img: "die4.svg"}, {value: 5, selected: false, img: "die5.svg"}
-    //     ])
-    // }, [])
-
     return (
-        <>
+        <div className={GameTable}>
             <PlayArea />
             <ScoreBoard />
-        </>
+        </div>
     )
 }
 
