@@ -42,10 +42,50 @@ export const scoreSlice = createSlice({
             state['Sixes'] = action.payload.filter(x => x === 6).length * 6
         },
         setThreeOfAKind: (state, action) => {
-            
+            let mf = 1
+            let m = 0
+            let item
+
+            for (let i = 0; i < action.payload.length; i++) {
+                for (let j = i; j < action.payload.length; j++) {
+                    if (action.payload[i] == action.payload[j])
+                        m++;
+                    if (mf < m) {
+                        mf = m; 
+                        item = action.payload[i];
+                    }
+                }
+                m = 0;
+            }
+
+            if (mf >= 3) {
+                state['Three of a Kind'] = action.payload.reduce((a, b) => a + b, 0)
+            } else {
+                state['Three of a Kind'] = 0
+            }
         },
         setFourOfAKind: (state, action) => {
-            
+            let nf = 1
+            let n = 0
+            let item
+
+            for (let i = 0; i < action.payload.length; i++) {
+                for (let j = i; j < action.payload.length; j++) {
+                    if (action.payload[i] == action.payload[j])
+                        n++;
+                    if (nf < n) {
+                        nf = n; 
+                        item = action.payload[i];
+                    }
+                }
+                n = 0;
+            }
+
+            if (nf >= 4) {
+                state['Four of a Kind'] = action.payload.reduce((a, b) => a + b, 0)
+            } else {
+                state['Four of a Kind'] = 0
+            }
         },
         setFullHouse: (state, action) => {
             
