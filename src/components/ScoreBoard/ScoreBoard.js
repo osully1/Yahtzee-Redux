@@ -16,6 +16,7 @@ const ScoreBoard = (props) => {
                 category={category}
                 idx={idx}
                 scoreValue={scoreValue}
+                key={idx}
             />
         )
     })

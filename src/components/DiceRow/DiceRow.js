@@ -12,6 +12,7 @@ const DiceRow = (props) => {
             <Die 
                 die={die}
                 idx={idx}
+                key={idx}
             />
         )
     })
