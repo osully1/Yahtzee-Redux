@@ -9,9 +9,12 @@ const ScoreBoard = (props) => {
     const count = useSelector(selectCount);
     const dispatch = useDispatch();
 
-    return Object.keys(score).map((key, idx) => {
+    return Object.keys(score).map((category, idx) => {
         return(
-            <ScoreCategory />
+            <ScoreCategory
+                category={category}
+                idx={idx}
+            />
         )
     })
 }

@@ -1,22 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    ones: null,
-    twos: null,
-    threes: null,
-    fours: null,
-    fives: null,
-    sixes: null,
-    threeOfAKind: null,
-    fourOfAKind: null,
-    fullHouse: null,
-    smallStraight: null,
-    largeStraight: null,
-    chance: null,
-    yahtzee: null,
-    sum: null,
-    bonus: null,
-    totalScore: null
+    'Ones': null,
+    'Twos': null,
+    'Threes': null,
+    'Fours': null,
+    'Fives': null,
+    'Sixes': null,
+    'Three of a Kind': null,
+   ' Four of a Kind': null,
+    'Full House': null,
+    'Small Straight': null,
+    'Large Straight': null,
+    'Chance': null,
+    'Yahtzee': null,
+    'Sum': null,
+    'Bonus': null,
+    'TotalScore': null
 };
 
 export const scoreSlice = createSlice({

@@ -1,8 +1,11 @@
 import styles from './ScoreCategory.module.css'
 
-const ScoreCategory = () => {
+const ScoreCategory = (props) => {
+    console.log(props.key)
     return(
-        <p className={styles.ScoreCategory}>score</p>
+        <div className={styles.ScoreCategory} key={props.idx}>
+            <p>{`${props.category}`}</p>
+        </div>
     )
 }
 
