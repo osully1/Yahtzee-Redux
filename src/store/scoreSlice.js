@@ -88,7 +88,7 @@ export const scoreSlice = createSlice({
             } else {state['Large Straight'] = 0}
         },
         setChance: (state, action) => {
-            
+            state['Chance'] = action.payload.reduce((a, b) => a + b, 0)
         },
         setYahtzee: (state, action) => {
             
