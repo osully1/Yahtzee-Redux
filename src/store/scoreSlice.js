@@ -8,7 +8,7 @@ const initialState = {
     'Fives': null,
     'Sixes': null,
     'Three of a Kind': null,
-   ' Four of a Kind': null,
+    'Four of a Kind': null,
     'Full House': null,
     'Small Straight': null,
     'Large Straight': null,
