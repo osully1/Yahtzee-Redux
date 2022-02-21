@@ -88,7 +88,32 @@ export const scoreSlice = createSlice({
             }
         },
         setFullHouse: (state, action) => {
-            
+            let nf = 1
+            let n = 0
+            let item
+            let newArr
+
+            for (let i = 0; i < action.payload.length; i++) {
+                for (let j = i; j < action.payload.length; j++) {
+                    if (action.payload[i] == action.payload[j])
+                        n++;
+                    if (nf < n) {
+                        nf = n; 
+                        item = action.payload[i];
+                    }
+                }
+                n = 0;
+            }            
+
+            if  (nf === 3) {
+                newArr = action.payload.filter(x => x !== item)
+            }
+
+            if (newArr && newArr[0] === newArr[1]) {
+                state['Full House'] = 25
+            } else {
+                state['Full House'] = 0
+            }
         },
         setSmallStraight: (state, action) => {
             if (

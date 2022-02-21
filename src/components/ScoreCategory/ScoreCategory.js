@@ -29,7 +29,6 @@ const ScoreCategory = (props) => {
     })
 
     const handleScoreSubmit = (dice, category) => {
-        console.log(diceArray)
         if (category === 'Ones') {
             dispatch(setOnes(diceArray))
         } else if (category === 'Twos') {
