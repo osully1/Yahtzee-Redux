@@ -16,7 +16,8 @@ import {
     setLargeStraight,
     setChance,
     setYahtzee,
-    setSumAndBonus } from '../../store/scoreSlice';
+    setSumAndBonus,
+    setTotalScore } from '../../store/scoreSlice';
 import { selectCount } from '../../store/countSlice';
 import { selectPlayDice } from '../../store/diceSlice'
 
@@ -59,6 +60,7 @@ const ScoreCategory = (props) => {
             dispatch(setYahtzee(diceArray))
         }
         dispatch(setSumAndBonus())
+        dispatch(setTotalScore())
     }
 
     return(

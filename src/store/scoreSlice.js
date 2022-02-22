@@ -7,6 +7,8 @@ const initialState = {
     'Fours': null,
     'Fives': null,
     'Sixes': null,
+    'Sum': null,
+    'Bonus': null,
     'Three of a Kind': null,
     'Four of a Kind': null,
     'Full House': null,
@@ -14,9 +16,7 @@ const initialState = {
     'Large Straight': null,
     'Chance': null,
     'Yahtzee': null,
-    'Sum': null,
-    'Bonus': null,
-    'TotalScore': null
+    'Total Score': null
 };
 
 export const scoreSlice = createSlice({
@@ -184,6 +184,15 @@ export const scoreSlice = createSlice({
             } else {
                 state['Sum'] = null
             }
+        },
+        setTotalScore: (state) => {
+            const sansTotal = state
+            delete sansTotal['Total Score']
+            if (Object.values(sansTotal).every(x => x !== null)) {
+                state['Total Score'] = Object.values(state).reduce((a, b) => a + b) - state['Sum']
+            } else {
+                state['Total Score'] = null
+            }
         }
     }
 });
@@ -202,7 +211,8 @@ export const {
     setLargeStraight,
     setChance,
     setYahtzee,
-    setSumAndBonus
+    setSumAndBonus,
+    setTotalScore
 } = scoreSlice.actions;
 
 export const selectScore = (state) => state.score;
