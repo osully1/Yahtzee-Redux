@@ -20,6 +20,22 @@ import {
     setTotalScore } from '../../store/scoreSlice';
 import { selectCount } from '../../store/countSlice';
 import { selectPlayDice } from '../../store/diceSlice'
+import { css, StyleSheet } from "aphrodite"
+
+const stylesb = StyleSheet.create({
+    active: {
+        height: '2em',
+        width: '4em',
+        alignSelf: 'flex-end',
+        cursor: 'pointer'
+    },
+    inactive: {
+        height: '2em',
+        width: '4em',
+        alignSelf: 'flex-end',
+        pointerEvents: 'none'
+    }
+})
 
 const ScoreCategory = (props) => {
     const score = useSelector(selectScore);
@@ -69,7 +85,13 @@ const ScoreCategory = (props) => {
                 <p className={styles.rowName}>{`${props.category}`}</p>
             </div>
             <button 
-                className={styles.button}
+                className={css([
+                    stylesb.active,
+                    (props.category === 'Sum'
+                    || props.category === 'Bonus'
+                    || props.category === 'Total Score')
+                    && stylesb.inactive
+                ])}
                 onClick={() => handleScoreSubmit(dice, props.category)}
             >{props.scoreValue}</button>
         </div>
@@ -77,3 +99,5 @@ const ScoreCategory = (props) => {
 }
 
 export default ScoreCategory
+
+// USPS NUMBER: 617-654-5695 Alintia Roland

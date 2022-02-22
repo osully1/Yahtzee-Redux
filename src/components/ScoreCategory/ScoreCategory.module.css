@@ -20,11 +20,23 @@
     align-self: flex-end;
 }
 
+.buttonDisabled {
+    height: 2em;
+    width: 4em;
+    align-self: flex-end;
+    pointer-events: none;
+}
+
 .button:hover {
-    background-color: lightgrey;
-    border: none;
+    background-color: #dddbdb;
+    
 }
 
 .button:disabled {
+    cursor: not-allowed
+}
+
+button:disabled,
+button[disabled]{
     cursor: not-allowed
 }
