@@ -165,6 +165,25 @@ export const scoreSlice = createSlice({
             } else {
                 state['Yahtzee'] = 0
             }
+        },
+        setSumAndBonus: (state) => {
+            if (
+                state['Ones'] !== null
+                && state['Twos'] !== null
+                && state['Threes'] !== null 
+                && state['Fours'] !== null 
+                && state['Fives'] !== null 
+                && state['Sixes'] !== null
+            ) {
+                state['Sum'] = state['Ones'] + state['Twos'] + state['Threes'] + state['Fours'] + state['Fives'] + state['Sixes']
+                if (state['Sum'] >= 63) {
+                    state['Bonus'] = 35
+                } else {
+                    state['Bonus'] = 0
+                }
+            } else {
+                state['Sum'] = null
+            }
         }
     }
 });
@@ -183,6 +202,7 @@ export const {
     setLargeStraight,
     setChance,
     setYahtzee,
+    setSumAndBonus
 } = scoreSlice.actions;
 
 export const selectScore = (state) => state.score;

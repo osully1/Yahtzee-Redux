@@ -1,4 +1,5 @@
 import styles from './ScoreCategory.module.css'
+import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { 
     selectScore,
@@ -14,7 +15,8 @@ import {
     setSmallStraight,
     setLargeStraight,
     setChance,
-    setYahtzee, } from '../../store/scoreSlice';
+    setYahtzee,
+    setSumAndBonus } from '../../store/scoreSlice';
 import { selectCount } from '../../store/countSlice';
 import { selectPlayDice } from '../../store/diceSlice'
 
@@ -56,6 +58,7 @@ const ScoreCategory = (props) => {
         } else if (category === 'Yahtzee') {
             dispatch(setYahtzee(diceArray))
         }
+        dispatch(setSumAndBonus())
     }
 
     return(
