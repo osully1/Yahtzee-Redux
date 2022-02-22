@@ -1,4 +1,10 @@
-.RollDiceButton {
+.buttonActive {
+    width: 8em;
+    height: 3em;
+    margin: 2em;
+}
+
+.buttonInactive{
     width: 8em;
     height: 3em;
     margin: 2em;

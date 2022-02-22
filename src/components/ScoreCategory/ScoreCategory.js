@@ -18,7 +18,7 @@ import {
     setYahtzee,
     setSumAndBonus,
     setTotalScore } from '../../store/scoreSlice';
-import { selectCount } from '../../store/countSlice';
+import { resetCount, selectCount } from '../../store/countSlice';
 import { selectPlayDice } from '../../store/diceSlice'
 import { css, StyleSheet } from "aphrodite"
 
@@ -77,6 +77,7 @@ const ScoreCategory = (props) => {
         }
         dispatch(setSumAndBonus())
         dispatch(setTotalScore())
+        dispatch(resetCount())
     }
 
     return(
