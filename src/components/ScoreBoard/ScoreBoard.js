@@ -7,7 +7,6 @@ import { selectCount } from '../../store/countSlice';
 const ScoreBoard = (props) => {
     const score = useSelector(selectScore);
     const count = useSelector(selectCount);
-    const dispatch = useDispatch();
 
     return Object.keys(score).map((category, idx) => {
         const scoreValue = score[`${category}`]
