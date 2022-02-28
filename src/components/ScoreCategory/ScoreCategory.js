@@ -46,7 +46,7 @@ const ScoreCategory = (props) => {
         return die.value
     })
 
-    const handleScoreSubmit = (category) => {
+    const handleScoreSubmit = (dice, category) => {
         if (category === 'Ones') {
             dispatch(setOnes(diceArray))
         } else if (category === 'Twos') {
@@ -88,7 +88,7 @@ const ScoreCategory = (props) => {
                 <button 
                     className={styles.button}
                     disabled={true}
-                    onClick={() => handleScoreSubmit(props.category)}
+                    onClick={() => handleScoreSubmit(dice, props.category)}
                 >{props.scoreValue}</button>
             </div>
         )
