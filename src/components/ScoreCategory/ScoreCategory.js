@@ -1,5 +1,4 @@
 import styles from './ScoreCategory.module.css'
-import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { 
     selectScore,
@@ -29,7 +28,7 @@ const stylesb = StyleSheet.create({
         alignSelf: 'flex-end',
         cursor: 'pointer'
     },
-    inactive: {
+    sumBonusTotal: {
         height: '2em',
         width: '4em',
         alignSelf: 'flex-end',
@@ -80,6 +79,21 @@ const ScoreCategory = (props) => {
         dispatch(resetCount())
     }
 
+    if (count !== 2) {
+        return(
+            <div className={styles.ScoreCategory} key={props.idx}>
+                <div className={styles.rowNameContainer}>
+                    <p className={styles.rowName}>{`${props.category}`}</p>
+                </div>
+                <button 
+                    className={styles.button}
+                    disabled={true}
+                    onClick={() => handleScoreSubmit(dice, props.category)}
+                >{props.scoreValue}</button>
+            </div>
+        )
+    }
+
     return(
         <div className={styles.ScoreCategory} key={props.idx}>
             <div className={styles.rowNameContainer}>
@@ -91,7 +105,7 @@ const ScoreCategory = (props) => {
                     (props.category === 'Sum'
                     || props.category === 'Bonus'
                     || props.category === 'Total Score')
-                    && stylesb.inactive
+                    && stylesb.sumBonusTotal
                 ])}
                 onClick={() => handleScoreSubmit(dice, props.category)}
             >{props.scoreValue}</button>

@@ -20,6 +20,14 @@
     align-self: flex-end;
 }
 
+.button:disabled {
+    height: 2em;
+    width: 4em;
+    align-self: flex-end;
+    background-color: #c0bfbf;
+    color: black
+}
+
 .buttonDisabled {
     height: 2em;
     width: 4em;
