@@ -1,12 +1,9 @@
 import styles from './RollDiceButton.module.css'
-import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { rollDice } from '../../store/diceSlice'
 import { incrementCount, resetCount, selectCount } from '../../store/countSlice';
 
 const RollDiceButton = (props) => {
-    const [active, setActive] = useState(true)
-
     const count = useSelector(selectCount)
 
     const dispatch = useDispatch();
@@ -20,16 +17,18 @@ const RollDiceButton = (props) => {
         }
     }
 
-    let buttonStyle
-    if (active) {
-        buttonStyle = styles.buttonActive
-    } else {
-        buttonStyle = styles.buttonInactive
+    if (count === 2) {
+        return (
+            <button
+                className={styles.buttonActive}
+                disabled={true}
+            >Roll Dice</button>
+        )
     }
 
     return (
         <button
-            className={buttonStyle}
+            className={styles.buttonActive}
             onClick={() => handleRollButtonClick()}
         >Roll Dice</button>
     )
